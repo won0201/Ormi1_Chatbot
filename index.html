@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>고민 상담 챗봇</title>
+    <link rel="stylesheet" href="./assets/style3.css" />
   </head>
-  <link rel="stylesheet" href="./assets/style.css" />
 
   <body>
     <!-- 로고 -->
@@ -16,36 +16,27 @@
 
     <!-- 채팅 -->
     <div class="chating">
-      <div class="main">
-        <div id="chat-container" class="chat-container">
+      <div class="chat-container" id="chat-container">
+        <div class="main">
           <div class="label">
             <img src="assets/img/info_label.png" />
           </div>
-          <ul id="chat-list" class="chat-list"></ul>
-          <!-- 챗봇 -->
-          <div class="chatbot">
-            <img src="./assets/img/bot.png" alt="챗봇 아이콘" />
-            <div class="chat_content">
-              <div class="speech-bubble">
-                <p>안녕하세요 말씀해주세요.</p>
-              </div>
-            </div>
-          </div>
         </div>
-
-        <!-- 사용자 -->
-        <form id="chat-form" action="post" class="chat-form">
-          <div class="user-message">
-            <textarea
-              id="chat-input"
-              placeholder="메시지를 입력하세요"
-            ></textarea>
-            <button type="submit" class="submit-button">
-              <img src="./assets/img/submit.png" alt="제출" />
-            </button>
-          </div>
-        </form>
       </div>
+      <ul id="chat-list" class="chat-list"></ul>
+
+      <!-- 사용자 -->
+      <form id="chat-form" action="post" class="chat-form">
+        <div class="user-message">
+          <textarea
+            id="chat-input"
+            placeholder="메시지를 입력하세요"
+          ></textarea>
+          <button type="submit" class="submit-button">
+            <img src="./assets/img/submit.png" alt="제출" />
+          </button>
+        </div>
+      </form>
     </div>
 
     <script src="./assets/js/index.js"></script>
