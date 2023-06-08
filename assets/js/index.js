@@ -12,7 +12,8 @@ let question;
 let data_function = [
   {
     role: "system",
-    content: "assistant는 고민 상담에 능통한 상냥한 말투를 가진 전문가이다.",
+    content:
+      "assistant는 고민 상담에 능통한 따뜻한 성격과 상냥한 말투를 가진 전문가이다.",
   },
 ];
 
@@ -38,24 +39,12 @@ const sendQuestion = (question) => {
 // 화면에 질문 그려주는 함수
 const printQuestion = () => {
   if (questionData.length > 0) {
-    const div = document.createElement("div");
-    div.classList.add("chat_content");
-
-    let content = questionData[0].content;
-    div.innerText = content;
-
     let li = document.createElement("li");
     li.classList.add("question");
-    li.appendChild(div);
-
-    // 말풍선의 너비를 입력된 말의 길이에 따라 조절
-    li.style.width = `${content.length * 3}px`;
-
-    chatContainer.insertBefore(li, chatContainer.children[1]);
-    questionData.shift(); // questionData 배열의 첫 번째 요소를 제거
+    li.innerText = questionData[questionData.length - 1].content;
+    chatList.appendChild(li);
+    questionData = [];
     question = false;
-
-    adjustBubbleWidth(); // 말풍선 크기 조절
   }
 };
 
@@ -86,40 +75,12 @@ window.addEventListener("DOMContentLoaded", () => {
   printAnswer(chatbotGreeting);
 });
 
-// 말풍선 크기 조절
-const adjustBubbleWidth = () => {
-  const answerBubbles = document.querySelectorAll(".answer .chat_content");
-  const questionBubbles = document.querySelectorAll(".question .chat_content");
-  answerBubbles.forEach((bubble) => {
-    const chatContentDiv = bubble.parentElement;
-    chatContentDiv.style.width = `${chatContentDiv.scrollWidth}px`;
-  });
-  questionBubbles.forEach((bubble) => {
-    const chatContentDiv = bubble.parentElement;
-    chatContentDiv.style.width = `${chatContentDiv.scrollWidth}px`;
-  });
-};
-
 // 화면에 답변을 그려주는 함수
 const printAnswer = (answer) => {
-  if (answer) {
-    const div = document.createElement("div");
-    div.classList.add("chat_content");
-
-    let content = answer;
-    div.innerText = content;
-
-    let li = document.createElement("li");
-    li.classList.add("answer");
-    li.appendChild(div);
-
-    // 말풍선의 너비를 입력된 말의 길이에 따라 조절
-    li.style.width = `${content.length * 15}px`;
-
-    chatList.appendChild(li);
-
-    adjustBubbleWidth(); // 말풍선 크기 조절
-  }
+  let li = document.createElement("li");
+  li.classList.add("answer");
+  li.innerText = answer;
+  chatList.appendChild(li);
 };
 
 // 대화 추가 함수
@@ -129,7 +90,6 @@ function addChat(text, isQuestion) {
   chatItem.classList.add(isQuestion ? "question" : "answer");
   chatItem.textContent = text;
   chatList.appendChild(chatItem);
-  adjustBubbleWidth(); // 말풍선 크기 조절
 }
 
 // 채팅 폼 제출 이벤트 핸들러
