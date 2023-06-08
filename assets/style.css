@@ -10,9 +10,8 @@ body {
 /* 헤더 */
 .header {
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 }
 
 /* h1 */
@@ -26,45 +25,25 @@ h1 > img {
   margin-right: 10px;
 }
 
-.main {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-/* label */
-.label {
-  top: 0;
-  display: flex;
-  left: 50%;
-  justify-content: center;
-  width: 100%;
-}
-
-.label img {
-  width: 60%;
-  max-width: 1200px;
-  margin-top: 10px;
-}
-
 /* 채팅 */
 .chating {
   position: relative;
   display: flex;
   flex-direction: column;
   top: -20px;
-  border: 5px solid rgb(0, 0, 0);
+  border: 5px solid #7eb396;
   width: 500px;
   height: 450px;
   box-sizing: border-box;
-  background-color: rgb(33, 220, 192);
+  background-color: #7eb396;
   overflow-y: auto;
 }
 
 /* question */
 
 .question {
-  background-color: #abc9d1;
+  background-color: #deb98b;
+  color: rgb(61, 47, 47);
   text-align: left;
   position: relative;
   display: inline-block;
@@ -81,11 +60,11 @@ h1 > img {
 .question::before {
   content: "";
   position: absolute;
-  right: -15px;
-  top: 50%;
-  border: 10px solid transparent;
+  right: -11.8px;
+  top: 9px;
+  border: 6px solid transparent;
   transform: translateY(-50%);
-  border-left-color: #abc9d1;
+  border-left-color: #deb98b;
 }
 
 .question .chat_content {
@@ -96,7 +75,8 @@ h1 > img {
 
 /* answer */
 .answer {
-  background-color: #68bbd2;
+  background-color: #948bd2d3;
+  color: rgb(0, 0, 0);
   display: inline-block;
   position: relative;
   text-align: left;
@@ -113,9 +93,10 @@ h1 > img {
 .answer::before {
   content: "";
   position: absolute;
-  left: -17px;
-  border: 10px solid transparent;
-  border-right-color: #68bbd2;
+  left: -12px;
+  top: 7px;
+  border: 6px solid transparent;
+  border-right-color: #948bd2d3;
 }
 
 .answer .chat_content {
