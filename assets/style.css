@@ -67,10 +67,11 @@ h1 > img {
   background-color: #abc9d1;
   text-align: left;
   position: relative;
-  display: inline-block;
+  display: flex;
   justify-content: flex-start;
   padding: 10px;
   margin-bottom: 10px;
+  margin-left: auto;
   margin-right: 10px;
   white-space: pre-wrap;
   max-width: 50%; /* 말풍선의 최대 너비를 설정 */
@@ -80,8 +81,8 @@ h1 > img {
   content: "";
   position: absolute;
   display: block;
-  right: -9%; /* 말풍선을 오른쪽으로 이동시킴 */
-  border: 5px solid transparent;
+  right: -7%; /* 말풍선을 오른쪽으로 이동시킴 */
+  border: 10px solid transparent;
   border-left-color: #abc9d1;
 }
 
@@ -94,18 +95,20 @@ h1 > img {
 /* answer */
 .answer {
   background-color: #68bbd2;
+  display: flex;
   position: relative;
   text-align: left;
   align-items: center;
   justify-content: flex-start;
   word-wrap: break-word;
+  max-width: 50%;
 }
 
 .answer::before {
   content: "";
   position: absolute;
-  left: -4%;
-  border: 5px solid transparent;
+  left: -7%;
+  border: 10px solid transparent;
   border-right-color: #68bbd2;
 }
 
