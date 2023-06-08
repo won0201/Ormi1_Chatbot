@@ -1,4 +1,5 @@
 body {
+  background-color: #accee5;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,23 +32,20 @@ h1 > img {
   display: flex;
   flex-direction: column;
   top: -20px;
-  border: 5px solid #7eb396;
+  border: 5px solid #648cc2;
   width: 500px;
   height: 450px;
   box-sizing: border-box;
-  background-color: #7eb396;
+  background-color: #648cc2;
   overflow-y: auto;
 }
 
 /* question */
-
 .question {
-  background-color: #deb98b;
-  color: rgb(61, 47, 47);
+  background-color: #cde0ef;
   text-align: left;
   position: relative;
   display: inline-block;
-  justify-content: flex-start;
   padding: 10px;
   margin-bottom: 50px;
   margin-right: 10px;
@@ -55,63 +53,93 @@ h1 > img {
   white-space: pre-wrap;
   word-wrap: break-word;
   max-width: 80%;
-}
-
-.question::before {
-  content: "";
-  position: absolute;
-  right: -11.8px;
-  top: 9px;
-  border: 6px solid transparent;
-  transform: translateY(-50%);
-  border-left-color: #deb98b;
+  border-radius: 15px;
 }
 
 .question .chat_content {
+  background-color: #cde0ef;
   display: inline-block;
   padding: 10px;
   border-radius: 15px;
+  color: rgb(61, 47, 47);
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+}
+
+.question-container {
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.chatbot-image {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
 }
 
 /* answer */
 .answer {
-  background-color: #948bd2d3;
-  color: rgb(0, 0, 0);
-  display: inline-block;
-  position: relative;
-  text-align: left;
+  display: flex;
   align-items: center;
-  justify-content: flex-start;
   margin-bottom: 50px;
   margin-right: auto;
-  margin-left: 10px;
   white-space: pre-wrap;
   word-wrap: break-word;
-  max-width: 75%;
 }
 
-.answer::before {
-  content: "";
-  position: absolute;
-  left: -12px;
-  top: 7px;
-  border: 6px solid transparent;
-  border-right-color: #948bd2d3;
+.answer .chatbot-image {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
 }
 
 .answer .chat_content {
-  display: flex;
+  background-color: #e6e6e6;
+  padding: 10px;
   border-radius: 15px;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  color: #333;
+  word-wrap: break-word;
+  text-align: left;
+  max-width: 80%;
+}
+
+.answer-container {
+  display: flex;
+  align-items: center;
 }
 
 /* chat-list */
 .chat-container {
+  position: relative;
+  display: flex;
   flex-direction: column-reverse; /* 대화 내용을 역순으로 나열하여 아래로 쌓이도록 설정 */
+}
+
+/* 채팅 헤드라인 */
+.chat-header {
+  position: sticky;
+  top: 0;
+  background-color: #648cc2;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  font-size: 20px;
+  color: #19191ad0;
 }
 
 .chat-list {
   list-style-type: none;
-  margin: 10px;
   padding: 10px;
   display: flex;
   flex-direction: column;
