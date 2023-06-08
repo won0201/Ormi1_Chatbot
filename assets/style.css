@@ -62,9 +62,6 @@ h1 > img {
 }
 
 /* question */
-.question-container {
-  text-align: right;
-}
 
 .question {
   background-color: #abc9d1;
@@ -77,14 +74,17 @@ h1 > img {
   margin-right: 10px;
   margin-left: auto;
   white-space: pre-wrap;
+  word-wrap: break-word;
+  max-width: 80%;
 }
 
 .question::before {
   content: "";
   position: absolute;
-  display: block;
-  right: -7%; /* 말풍선을 오른쪽으로 이동시킴 */
+  right: -15px;
+  top: 50%;
   border: 10px solid transparent;
+  transform: translateY(-50%);
   border-left-color: #abc9d1;
 }
 
@@ -95,10 +95,6 @@ h1 > img {
 }
 
 /* answer */
-.answer-container {
-  text-align: left;
-}
-
 .answer {
   background-color: #68bbd2;
   display: inline-block;
@@ -109,13 +105,15 @@ h1 > img {
   margin-bottom: 50px;
   margin-right: auto;
   margin-left: 10px;
+  white-space: pre-wrap;
   word-wrap: break-word;
+  max-width: 75%;
 }
 
 .answer::before {
   content: "";
   position: absolute;
-  left: -7%;
+  left: -17px;
   border: 10px solid transparent;
   border-right-color: #68bbd2;
 }
