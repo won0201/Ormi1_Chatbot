@@ -5,16 +5,16 @@
   	  * 서로 대화할 수 있는 방식
 
 - 수정사항
-* textarea 모양 수정 O
-* submit 위치 수정 O
-* question 우측 여백 없애기 O
-* 말풍선 화살표 붙이기 O
-* question, answer 위로 옮기기 O
-* answer 부분 위치 수정
-* question 말풍선 크기 바뀌는거 고치기
-* answer 부분 위치 수정
-* question 부분도 chatbot 형태로 만들기 
-* 말풍선 크기 조절
-* 전체적인 꾸미기
-* 로딩 화면 만들기
-* 추가 기능 생각하기
+  1) textarea 모양 수정 O
+  2) submit 위치 수정 O
+  3) question 우측 여백 없애기 O
+  4) 말풍선 화살표 붙이기 O
+  5) question, answer 위로 옮기기 O
+  6) answer 부분 위치 수정
+  7) question 말풍선 크기 바뀌는거 고치기
+  8) answer 부분 위치 수정
+  9) question 부분도 chatbot 형태로 만들기 
+  10) 말풍선 크기 조절
+  11) 전체적인 꾸미기
+  12) 로딩 화면 만들기
+  13) 추가 기능 생각하기
