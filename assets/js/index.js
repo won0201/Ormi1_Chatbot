@@ -15,6 +15,10 @@ let data_function = [
     content:
       "assistant는 고민 상담에 능통한 따뜻한 성격과 상냥한 말투를 가진 전문가이다.",
   },
+  {
+    role: "system",
+    content: "assistant는 특별한 요청이 없다면, 한국어로 대답해야한다.",
+  },
 ];
 
 // 화면에 뿌려줄 데이터, 질문들
@@ -41,10 +45,23 @@ const printQuestion = () => {
   if (questionData.length > 0) {
     let li = document.createElement("li");
     li.classList.add("question");
-    li.innerText = questionData[questionData.length - 1].content;
+
+    const questionContainer = document.createElement("div");
+    questionContainer.classList.add("question-container");
+
+    const userIcon = document.createElement("img");
+    userIcon.classList.add("user-icon");
+    userIcon.src = "./assets/img/user.png";
+    userIcon.alt = "User";
+
+    const questionText = document.createElement("div");
+    questionText.classList.add("question_content");
+    questionText.textContent = questionData[questionData.length - 1].content;
+
+    questionContainer.appendChild(userIcon);
+    questionContainer.appendChild(questionText);
+    li.appendChild(questionContainer);
     chatList.appendChild(li);
-    questionData = [];
-    question = false;
   }
 };
 
@@ -68,7 +85,7 @@ const apiPost = async () => {
 };
 
 // 챗봇의 인사
-const chatbotGreeting = "안녕하세요. 말씀해주세요.";
+const chatbotGreeting = `안녕하세요. 반가워요.`;
 
 // 화면 로딩 시 챗봇의 인사를 출력
 window.addEventListener("DOMContentLoaded", () => {
@@ -79,7 +96,22 @@ window.addEventListener("DOMContentLoaded", () => {
 const printAnswer = (answer) => {
   let li = document.createElement("li");
   li.classList.add("answer");
-  li.innerText = answer;
+
+  const answerContainer = document.createElement("div");
+  answerContainer.classList.add("answer-container");
+
+  const chatbotImage = document.createElement("img");
+  chatbotImage.classList.add("chatbot-image");
+  chatbotImage.src = "./assets/img/bot.png";
+  chatbotImage.alt = "Chatbot";
+
+  const answerText = document.createElement("div");
+  answerText.classList.add("chat_content");
+  answerText.textContent = answer;
+
+  answerContainer.appendChild(chatbotImage);
+  answerContainer.appendChild(answerText);
+  li.appendChild(answerContainer);
   chatList.appendChild(li);
 };
 
