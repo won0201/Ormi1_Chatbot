@@ -12,7 +12,6 @@ body {
 .header {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
 }
 
 /* h1 */
@@ -54,6 +53,8 @@ h1 > img {
   word-wrap: break-word;
   max-width: 80%;
   border-radius: 15px;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
 }
 
 .question .chat_content {
@@ -62,8 +63,6 @@ h1 > img {
   padding: 10px;
   border-radius: 15px;
   color: rgb(61, 47, 47);
-  font-family: "Arial", sans-serif;
-  font-size: 14px;
 }
 
 .question-container {
@@ -120,15 +119,14 @@ h1 > img {
 
 /* chat-list */
 .chat-container {
-  position: relative;
+  position: sticky;
+  top: 0;
   display: flex;
   flex-direction: column-reverse; /* 대화 내용을 역순으로 나열하여 아래로 쌓이도록 설정 */
 }
 
 /* 채팅 헤드라인 */
 .chat-header {
-  position: sticky;
-  top: 0;
   background-color: #648cc2;
   padding: 10px;
   font-weight: bold;
