@@ -68,9 +68,14 @@ const showLoadingIndicator = () => {
   const loadingIndicator = document.createElement("div");
   loadingIndicator.classList.add("loading-indicator");
   loadingIndicator.id = "loading-indicator";
+  chatContainer.parentNode.insertBefore(loadingIndicator, chatContainer);
 
-  // loadingIndicator를 chatList의 맨 뒤에 추가
-  chatList.appendChild(loadingIndicator);
+  // 채팅 컨테이너에 블러 처리를 추가
+  document
+    .querySelectorAll(".question-container, .answer-container")
+    .forEach((element) => {
+      element.classList.add("blur");
+    });
 };
 
 // 화면에 로딩 표시를 숨기는 함수
@@ -79,6 +84,13 @@ const hideLoadingIndicator = () => {
   if (loadingIndicator) {
     loadingIndicator.remove();
   }
+
+  // 채팅 컨테이너의 블러 처리를 제거
+  document
+    .querySelectorAll(".question-container, .answer-container")
+    .forEach((element) => {
+      element.classList.remove("blur");
+    });
 };
 
 // API 요청을 보내는 함수
