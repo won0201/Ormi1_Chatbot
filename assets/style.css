@@ -190,6 +190,10 @@ h1 > img {
   }
 }
 
+.blur {
+  filter: blur(5px);
+}
+
 /* input */
 .user-message {
   position: fixed;
