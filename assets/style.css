@@ -57,7 +57,7 @@ h1 > img {
 }
 
 .question .chat_content {
-  background-color: #e6e6e6;
+  background-color: #cde0efb3;
   padding: 10px;
   border-radius: 15px;
   font-family: "Arial", sans-serif;
@@ -73,6 +73,7 @@ h1 > img {
   align-items: center;
   justify-content: flex-end;
   position: relative;
+  flex-direction: row-reverse;
 }
 
 .user-icon {
@@ -99,7 +100,7 @@ h1 > img {
 }
 
 .answer .chat_content {
-  background-color: #e6e6e6;
+  background-color: #f5fafba7;
   padding: 10px;
   border-radius: 15px;
   font-family: "Arial", sans-serif;
