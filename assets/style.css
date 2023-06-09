@@ -1,7 +1,7 @@
 body {
   background-color: #accee5;
-  display: flex;
   flex-direction: column;
+  display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
@@ -33,7 +33,7 @@ h1 > img {
   top: -20px;
   border: 5px solid #648cc2;
   width: 500px;
-  height: 450px;
+  height: 70vh;
   box-sizing: border-box;
   background-color: #648cc2;
   overflow-y: auto;
@@ -41,47 +41,45 @@ h1 > img {
 
 /* question */
 .question {
-  background-color: #cde0ef;
-  text-align: left;
-  position: relative;
-  display: inline-block;
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   margin-bottom: 50px;
-  margin-right: 10px;
   margin-left: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
-  max-width: 80%;
-  border-radius: 15px;
-  font-family: "Arial", sans-serif;
-  font-size: 14px;
+}
+
+.question .user-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
 }
 
 .question .chat_content {
-  background-color: #cde0ef;
-  display: inline-block;
+  background-color: #e6e6e6;
   padding: 10px;
   border-radius: 15px;
-  color: rgb(61, 47, 47);
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  color: #333;
+  word-wrap: break-word;
+  text-align: left;
+  max-width: 80%;
 }
 
 .question-container {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  position: relative;
 }
 
 .user-icon {
   display: inline-block;
   width: 50px;
   height: 50px;
-  margin-right: 10px;
-}
-
-.chatbot-image {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 /* answer */
@@ -115,13 +113,22 @@ h1 > img {
 .answer-container {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  position: relative;
 }
 
-/* chat-list */
-.chat-container {
+.chatbot-image {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
   position: sticky;
   top: 0;
-  display: flex;
+}
+
+/* Chat-container */
+.chat-container {
+  position: relative;
   flex-direction: column-reverse;
 }
 
@@ -141,6 +148,7 @@ h1 > img {
   padding: 10px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .chat-list li {
@@ -156,6 +164,30 @@ h1 > img {
 
 .chat-list li.answer {
   justify-content: flex-end;
+}
+
+/* loading */
+.loading-indicator {
+  height: 30px;
+  width: 30px;
+  border: 6px solid #fff;
+  border-right-color: #c30;
+  border-top-color: #c30;
+  border-radius: 100%;
+  animation: spin 800ms infinite linear;
+  position: fixed;
+  top: 50%;
+  left: 48%;
+  transform: translate(-50%, -50%) translateY(-50vh);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
 
 /* input */
