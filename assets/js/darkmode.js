@@ -2,7 +2,8 @@
 const darkModeToggle = document.getElementById("dark");
 
 // 다크 모드 토글 버튼 클릭 이벤트 처리
-darkModeToggle.addEventListener("click", () => {
+darkModeToggle.addEventListener("click", (event) => {
+  event.preventDefault(); // submit 이벤트 기본 동작 막기
   toggleDarkMode();
 });
 
