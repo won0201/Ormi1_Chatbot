@@ -109,12 +109,14 @@ const apiPost = async () => {
 
     if (response.ok) {
       const result = await response.json();
-      return result.choices[0].message.content;
+      const answer = result.choices[0].message.content;
+      printAnswer(answer);
     } else {
       throw new Error("API 요청에 실패했습니다.");
     }
   } catch (error) {
     console.log(error);
+    printAnswer("죄송합니다. 오류가 발생했습니다.");
   } finally {
     hideLoadingIndicator();
     data = [];
@@ -178,6 +180,20 @@ document
       printAnswer(answer);
     }
   });
+
+// input의 keydown 이벤트 핸들러
+chatInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" && !event.shiftKey) {
+    event.preventDefault();
+    const message = chatInput.value.trim();
+    if (message !== "") {
+      chatInput.value = "";
+      sendQuestion(message);
+      printQuestion(message);
+      apiPost();
+    }
+  }
+});
 
 // Submit 이벤트 처리
 chatForm.addEventListener("submit", (e) => {
