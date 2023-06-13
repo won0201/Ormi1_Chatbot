@@ -13,11 +13,7 @@ let data_function = [
   {
     role: "system",
     content:
-      "assistant는 고민 상담에 능통한 따뜻한 성격과 상냥한 말투를 가진 전문가이다.",
-  },
-  {
-    role: "system",
-    content: "assistant는 특별한 요청이 없다면, 한국어로 대답해야한다.",
+      "assistant는 고민 상담에 능통한 따뜻한 성격과 상냥한 말투를 가졌으며, 특별한 요청이 없다면 한국어로 대답해주는 상담사이다.",
   },
 ];
 
